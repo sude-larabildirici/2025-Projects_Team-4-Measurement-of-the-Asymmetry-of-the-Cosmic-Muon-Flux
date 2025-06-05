@@ -6,4 +6,5 @@ Douwe Boonstoppel
 Ciaran Connolly
 Sara Porta Etssam
 
+Afmetingen van scintillator: https://www.nikhef.nl/muonlab/
 
