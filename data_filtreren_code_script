@@ -1,0 +1,84 @@
+# %%
+import pandas as pd
+
+# %% [markdown]
+# # Code voor het filtreren van de data
+
+# %% [markdown]
+# ### Sorteren van CSV file in een lijst
+
+# %%
+delta_time = []
+
+with open('hoek_0_c1.csv', 'r', newline='') as file:
+    next(file)
+    for line in file:
+        line_splitted = line.split(',')
+        delta_time.append(float(line_splitted[4]))
+    delta_time.pop(0)
+print(delta_time)
+
+# %% [markdown]
+# ### Filtreren van de lijst
+# Op basis van:
+# - Groter dan nul
+# - Een bovengrens
+
+# %%
+sorted_delta_time = []
+
+for i in delta_time:
+    if i > 0 and i < 7.5 :
+        sorted_delta_time.append(i)
+
+print(sorted_delta_time)
+
+# Lengte van de lijst
+print(len(sorted_delta_time))
+
+# %% [markdown]
+# ### Berekenen van de muon-flux
+
+# %%
+#Aantal detecties
+N = len(sorted_delta_time)
+#Lengte meting (in s)
+t = 5460
+#Oppervlakte (m^2)
+A = 0.030551
+#Solid Angle
+O = 1
+
+flux = N/(t*A*O)
+print(flux)
+
+# %% [markdown]
+# ### Percentage van de data onder een grens 'n'
+
+# %%
+# Definieer een bovengrens 'n'
+n = 7.5
+count = 0
+
+for i in delta_time:
+    if i < n:
+        count += 1
+
+print(count/(len(delta_time)))
+
+# %% [markdown]
+# ### Gemiddelde $\Delta$ time na filtreren
+
+# %%
+count = 0
+
+for i in sorted_delta_time:
+    if i < 7.5:
+        count += i
+
+print(count/(len(sorted_delta_time)))
+
+# %% [markdown]
+# 
+
+
