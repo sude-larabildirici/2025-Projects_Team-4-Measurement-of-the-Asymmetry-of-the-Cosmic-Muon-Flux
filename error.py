@@ -34,5 +34,3 @@ def error_flux(tijd, Solid, Aeff, hoek_graad, N, d, h, b, l, w, le, Err_h, Err_d
 
     Err_flux = math.sqrt((Err_N*par_flux_N)**2+(Err_Aeff*par_flux_Aeff)**2+(Err_Solid*par_flux_Solid)**2)
     return Err_flux
-
-print(error_flux(5,4,3,6,8,3,6,4,1,3,7,8,4))
