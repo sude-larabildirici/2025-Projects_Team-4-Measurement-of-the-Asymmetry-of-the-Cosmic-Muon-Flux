@@ -21,6 +21,7 @@ CSV_FILES = [
 x_0 = 4.5e-2
 #y_0 is half of the base length. this does not change with the projections
 y_0 = 20.0e-2
+#z_0 is the half of the height of the scintillator
 #h_0 is the height of the table
 h_0 = 86.0e-2
 
@@ -34,7 +35,7 @@ theta = 0
 # SCINTILLATORS H (where h_0 is the height of the table and x_0 is half width of the scintillator)
 
 x_projection = x_0 * math.cos(theta)
-h_projection = h_0 * math.cos(theta)
+h_projection = h_0 * math.sec(theta)
 
 
 
@@ -44,7 +45,7 @@ h_projection = h_0 * math.cos(theta)
 # h is the distance between the centres of both scintillators
 # hoek is the angle that the vertical makes with the line that connects both 
 # scintillators 
-def solid_angle(w, l, h,  hoek):
+def solid_angle(w, l, h):
     return 4*math.atan((w*l)/((h/2) * math.sqrt(w**2 + l ** 2 + (h/2)**2)))
 
 
@@ -52,9 +53,9 @@ def solid_angle(w, l, h,  hoek):
 ## call this function with solid_angle( x_projection, y_0, h_projection, theta)
 
 
-# the effective area can be calculated as:
+# the effective area has to calculated without a prokection:
 
-area = x_projection * y_0
+area = (2*x_0 + z_0) * 2 * y_0
 
 
 
