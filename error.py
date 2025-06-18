@@ -20,7 +20,7 @@ def error_flux(tijd, Solid, Aeff, hoek_graad, N, d, h, b, l, w, le, Err_h, Err_d
     Err_Aeff = abs(Err_hoek*par_Aeff_hoek)
     par_flux_Aeff = -N/(tijd*Solid*(Aeff**2))
 
-    par_Solid_hoek = (4*h*le*w*cos_hoek*((w**2 + h**2)*cos_hoek**2 + le**2)*sin_hoek)/((h**2*cos_hoek**2 + le**2) * (w**2*cos_hoek**2 + h**2*cos_hoek**2 + le**2)**(1.5))
+    #par_Solid_hoek = (4*h*le*w*cos_hoek*((w**2 + h**2)*cos_hoek**2 + le**2)*sin_hoek)/((h**2*cos_hoek**2 + le**2) * (w**2*cos_hoek**2 + h**2*cos_hoek**2 + le**2)**(1.5))
     par_Solid_hoek_num = 2*h*le*w*sec_hoek*((h**2*sec_hoek**2 + 4*w**2*cos_hoek**2 + 4*le**2)*((2*h**2*cos_hoek*sec_hoek**2 + 4*w**2*cos_hoek**3 + 4*le**2*cos_hoek)*tan_hoek + (h**2*sec_hoek**2 + 4*le**2)*sin_hoek))
     par_Solid_hoek_den = (((h**2*sec_hoek**2)/4 + w**2*cos_hoek**2 + le**2)**(3/2) * (h**4*sec_hoek**4 + (4*h**2*w**2*cos_hoek**2 + 4*h**2*le**2)*sec_hoek**2 + 16*le**2*w**2*cos_hoek**2))
     par_Solid_hoek = - par_Solid_hoek_num/par_Solid_hoek_den
