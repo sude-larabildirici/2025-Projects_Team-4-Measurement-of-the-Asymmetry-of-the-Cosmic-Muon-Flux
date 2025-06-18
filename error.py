@@ -17,10 +17,18 @@ def error_flux(tijd, Solid, Aeff, hoek_graad, N, d, h, w, le, Err_h, Err_d):
     Err_N = math.sqrt(N)
     par_flux_N = 1/(tijd*Solid*Aeff)
 
-    par_hoek_h = -d/(d^2+h^2)
 
-    par_hoek_d = h/(d^2+h^2)
+       ### LaTeX too much???
+    ################I have commented out the part where you used LaTeX and I rewrote that part of the code
+  ### origina code
+    # par_hoek_h = -d/(d^2+h^2)
 
+    # par_hoek_d = h/(d^2+h^2)
+#####################################    Start of the modification
+    par_hoek_h = -d/(d**2+h**2)
+
+    par_hoek_d = h/(d**2+h**2)
+ ########################################    End of change
     Err_hoek = math.sqrt((Err_d*par_hoek_d)**2+(Err_h*par_hoek_h)**2)
 
     #par_Solid_hoek = (4*h*le*w*cos_hoek*((w**2 + h**2)*cos_hoek**2 + le**2)*sin_hoek)/((h**2*cos_hoek**2 + le**2) * (w**2*cos_hoek**2 + h**2*cos_hoek**2 + le**2)**(1.5))
