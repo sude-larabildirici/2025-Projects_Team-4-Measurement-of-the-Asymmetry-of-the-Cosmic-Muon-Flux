@@ -54,7 +54,7 @@ def solid_angle(w, l, h):
 
 # the effective area has to calculated without a prokection:
 
-area = (2*x_0 + z_0) * 2 * y_0
+area = 2(x_0 + z_0) * 2 * y_0
 
 
 
