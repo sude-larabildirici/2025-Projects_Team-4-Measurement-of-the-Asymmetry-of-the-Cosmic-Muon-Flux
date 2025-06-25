@@ -5,8 +5,8 @@ class Team_names(Scene):
     def construct(self):
         # We set up the names of the users
         group_name = Text("Groep 4:", font="DejaVu Sans").to_corner(UL)
-        name1 = Text("Douwe Boonstoppel", font="DejaVu Sans", font_size =55)
-        name2 = Text("Sude-Lara Bildirici", font="DejaVu Sans", font_size =55) 
+        name2 = Text("Douwe Boonstoppel", font="DejaVu Sans", font_size =55)
+        name1 = Text("Sude-Lara Bildirici", font="DejaVu Sans", font_size =55) 
         name3 = Text("Ciarán Connolly", font="DejaVu Sans", font_size =55)
         name4 = Text("Sara Porta Etssam", font="DejaVu Sans", font_size =55)
 
